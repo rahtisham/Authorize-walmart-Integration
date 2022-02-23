@@ -4,6 +4,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\PDFConotroller;
+use App\Http\Controllers\AuthorizeNetController;;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Walmart\Alerts\RatingRaviewController;
 use App\Http\Controllers\Walmart\Alerts\OnTimeDeliveryController;
@@ -34,6 +36,10 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
+});
+
+Route::get('registration-form', function () {
+    return view('payment');
 });
 
 Route::group(['middleware' => 'auth'] , function(){
@@ -107,7 +113,22 @@ Route::group(['middleware' => 'auth'] , function(){
 
     });
 
+    Route::prefix('dashboard')->group(function () {
+
+        Route::get('authorize', [AuthorizeNetController::class, 'index'])->name('dashboard.authorize');
+
+    });
+
+    Route::prefix('dashboard')->group(function () {
+
+        Route::get('pay' , [PaymentController::class , 'pay'])->name('pay');
+        Route::post('/dopay/online' , [PaymentController::class , 'handleonlinepay'])->name('dopay.online');
+
+    });
+
 });
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');

@@ -99,7 +99,7 @@ class Walmart{
 
         if($createdStartDate)
         {
-            $url = "https://marketplace.walmartapis.com/v3/orders?createdStartDate.$createdStartDate"; // Walmart Order for Current date
+            $url = "https://marketplace.walmartapis.com/v3/orders?createdStartDate=".$createdStartDate; // Walmart Order for Current date
         }
 
 //          $url = "https://marketplace.walmartapis.com/v3/insights/items/listingQuality/score"; // Walmart An Order

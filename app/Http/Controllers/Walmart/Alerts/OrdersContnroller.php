@@ -39,13 +39,13 @@ class OrdersContnroller extends Controller
             $data_last = Order_details::orderBy('order_date', 'DESC')->first();
 
             $createdStartDates = $data_last['order_date'];
-
             $addDay= strtotime($createdStartDates . "+1 days");
             $createdStartDate = date('Y-m-d', $addDay);
 
             $token = Walmart::getToken($client_id, $secret);
 
             $response[] = Walmart::getItemOrder($client_id, $secret, $token ,$createdStartDate);
+//            return $response;
 
             if ($response[0]) {
 
