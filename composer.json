@@ -17,7 +17,6 @@
         "laravel/tinker": "^2.5",
         "league/omnipay": "^3.2",
         "livewire/livewire": "^2.5",
-        "omnipay/authorizenet": "3.x@dev",
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {

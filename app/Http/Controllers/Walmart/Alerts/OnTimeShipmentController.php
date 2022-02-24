@@ -63,12 +63,6 @@ class OnTimeShipmentController extends Controller
                     'status' => $actualShippingStatus,
                 ];
 
-//                $walmart_ontime_shiping = walmart_OnTimeShip::create([
-//                    'order_id' => $report['user_id'],
-//                    'actualShipDate' => $report['actualShipDate'],
-//                    'estimatedShipDate' => $report['estimatedShipDate'],
-//                    'status' => $actualShippingStatus,
-//                ]);
 
             }
 

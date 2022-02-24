@@ -31,7 +31,7 @@
         padding-right: 2.4rem;
         align-items: center;
         display: flex;
-		
+
         // box-shadow: $shadow;
         // @include respond('desktop') {
         //     padding-left: 15px;
@@ -60,7 +60,7 @@
 			padding-right: 0.938rem;
 			border-radius: 0;
         }
-		
+
     }
     .navbar {
         padding: 0;
@@ -149,7 +149,7 @@ svg.pulse-svg {
 		height:0.5rem;
 		width:0.5rem;
 	}
-	
+
 }
 
 @-webkit-keyframes pulse-me {
@@ -247,7 +247,7 @@ svg.pulse-svg {
     .header {
 		width: 100%;
 		padding-left: 9.375rem;
-    
+
 
     }
 	&[data-layout="horizontal"] {
@@ -256,7 +256,7 @@ svg.pulse-svg {
 		}
 		.header .header-content{
             padding-left: 30px;
-			
+
         }
 	}
 }

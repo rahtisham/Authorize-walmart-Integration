@@ -26,6 +26,13 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'last_name',
+        'address',
+        'city',
+        'postal',
+        'country',
+        'state',
+        'contact',
         'password',
     ];
 
@@ -58,4 +65,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+//    public static function store($playload)
+//    {
+//        User::create($playload);
+//    }
 }

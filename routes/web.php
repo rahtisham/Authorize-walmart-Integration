@@ -15,6 +15,7 @@ use App\Http\Controllers\Walmart\Alerts\RegionalPerformanceController;
 use App\Http\Controllers\Walmart\Alerts\OrdersContnroller;
 use App\Http\Controllers\Walmart\Alerts\ShippingPerformanceController;
 use App\Http\Controllers\Walmart\Alerts\ItemsController;
+use App\Http\Controllers\MarketPlace\MarketPlaceController;
 
 
 
@@ -42,84 +43,72 @@ Route::get('registration-form', function () {
     return view('payment');
 });
 
+
 Route::group(['middleware' => 'auth'] , function(){
 
+
     Route::prefix('dashboard')->group(function () {
+
+        Route::prefix('marketplace')->group(function () {
+
+            Route::get('/', [MarketPlaceController::class, 'index'])->name('dashboard.marketplace');
+            Route::get('/plate-form', [MarketPlaceController::class, 'plateForm'])->name('dashboard.select-marketplace');
+            Route::get('walmart', [MarketPlaceController::class, 'walmartRegister'])->name('dashboard.select-marketplace.register');
+            Route::post('walmart/add', [MarketPlaceController::class, 'walmartIntegration'])->name('dashboard.marketplace.walmart.integration');
+
+        });
+
 
         Route::get('/pdf' , [PDFConotroller::class , 'index'])->name('dashboard.pdf');
         Route::get('generatepdf', [PDFConotroller::class, 'generatePDF'])->name('dashboard.generatepdf');
 
-    });
 
-    Route::prefix('dashboard')->group(function () {
 
         Route::get('shipping-performance', [ShippingPerformanceController::class, 'index'])->name('dashboard.shipping-performance');
         Route::post('shipping-performance-add', [ShippingPerformanceController::class, 'ratingReview'])->name('dashboard.shipping-performance-add');
 
-    });
-
-    Route::prefix('dashboard')->group(function () {
 
         Route::get('rating-review', [RatingRaviewController::class, 'index'])->name('dashboard.rating-review');
         Route::post('rating-review-add', [RatingRaviewController::class, 'ratingReview'])->name('dashboard.rating-review-add');
 
-    });
 
-    Route::prefix('dashboard')->group(function () {
 
         Route::get('on-time-delivery', [OnTimeDeliveryController::class, 'index'])->name('dashboard.on-time-delivery');
         Route::get('on-time-delivery-add', [OnTimeDeliveryController::class, 'OnTimeDelivered'])->name('dashboard.on-time-delivery-add');
 
-    });
 
-    Route::prefix('dashboard')->group(function () {
 
         Route::get('on-time-shipment', [OnTimeShipmentController::class, 'index'])->name('dashboard.on-time-shipment');
         Route::get('on-time-shipment-add', [OnTimeShipmentController::class, 'OnTimeShipment'])->name('dashboard.on-time-shipment-add');
 
-    });
 
-    Route::prefix('dashboard')->group(function () {
 
         Route::get('carrier-performance', [CarrierPerformanceController::class, 'index'])->name('dashboard.carrier-performance');
         Route::get('carrier-performance-add', [CarrierPerformanceController::class, 'carrierPerformance'])->name('dashboard.carrier-performance-add');
 
-    });
 
-    Route::prefix('dashboard')->group(function () {
 
         Route::get('regional-performance', [RegionalPerformanceController::class, 'index'])->name('dashboard.regional-performance');
         Route::get('regional-performance-add', [RegionalPerformanceController::class, 'regionalPerformance'])->name('dashboard.regional-performance-add');
 
-    });
 
-    Route::prefix('dashboard')->group(function () {
 
         Route::get('order', [OrdersContnroller::class, 'index'])->name('dashboard.order');
         Route::post('order-add', [OrdersContnroller::class, 'orderDetails'])->name('dashboard.order-add');
 
-    });
 
-    Route::prefix('dashboard')->group(function () {
 
         Route::get('items', [ItemsController::class, 'index'])->name('dashboard.items');
         Route::post('items-add', [ItemsController::class, 'walmartItems'])->name('dashboard.items-add');
 
-    });
 
-    Route::prefix('dashboard')->group(function () {
 
-       Route::get('client', [DashboardController::class, 'client'])->name('dashboard.client');
+        Route::get('client', [DashboardController::class, 'client'])->name('dashboard.client');
 
-    });
 
-    Route::prefix('dashboard')->group(function () {
 
         Route::get('authorize', [AuthorizeNetController::class, 'index'])->name('dashboard.authorize');
 
-    });
-
-    Route::prefix('dashboard')->group(function () {
 
         Route::get('pay' , [PaymentController::class , 'pay'])->name('pay');
         Route::post('/dopay/online' , [PaymentController::class , 'handleonlinepay'])->name('dopay.online');
