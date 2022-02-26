@@ -16,39 +16,23 @@
             </div>
         @endif
         <div class="row">
-{{--            @foreach($integrationData as $walmart)--}}
+            @foreach($marketPlace as $walmart)
                 <div class="col-xl-4">
-                    <a href="dfsfs">
+                    <a href="#">
                         <div class="card HoverCard bg-image-walmart">
                             <div class="card-header">
-                                <button type="button" class="btn btn-success btn-xxs">sdffsdf</button>
+                                <button type="button" class="btn btn-success btn-xxs">Active</button>
                             </div>
                             <div class="pdleft">
                                 <img class="mg5" src="{{ asset('AppealLab/images/walmart-logo.png') }}" width="60px" alt="">
-                                <h4 class="mg5">sfs</h4>
-                                <button type="button" class="btn btn-primary btn-xs mg5">sdfds</button>
+                                <h4 class="mg5">{{ $walmart['platform'] }}</h4>
+                                <button type="button" class="btn btn-primary btn-xs mg5">{{ $walmart['name'] }}</button>
                                 <p class="mg5">Your configuration goes here <i class="fa fa-arrow-right" aria-hidden="true"></i></p>
                             </div>
                         </div>
                     </a>
                 </div>
-{{-- @endforeach--}}
-            <div class="col-xl-4">
-                <a href="#">
-                    <div class="card HoverCard bg-image-amazone">
-                        <div class="card-header">
-                            <button type="button" class="btn btn-danger btn-xxs">Active</button>
-                        </div>
-                        <div class="pdleft">
-                            <img class="mg5" src="{{ asset('AppealLab/images/amazon-logo.png') }}" width="60px" alt="">
-                            <h4 class="mg5">Amazone</h4>
-                            <button type="button" class="btn btn-primary btn-xs mg5">Tay Store</button>
-                            <p class="mg5">Your configuration goes here <i class="fa fa-arrow-right" aria-hidden="true"></i></p>
-                        </div>
-
-                    </div>
-                </a>
-            </div>
+            @endforeach
             <div class="col-xl-4">
                 <a href="{{ url('dashboard/marketplace/plate-form') }}">
                     <div class="card HoverCard bg-image-apps">
@@ -63,6 +47,23 @@
 
                     </div>
                 </a>
+{{--                <a href="#">--}}
+{{--                    <div class="card HoverCard bg-image-amazone">--}}
+{{--                        <div class="card-header">--}}
+{{--                            <button type="button" class="btn btn-danger btn-xxs">Active</button>--}}
+{{--                        </div>--}}
+{{--                        <div class="pdleft">--}}
+{{--                            <img class="mg5" src="{{ asset('AppealLab/images/amazon-logo.png') }}" width="60px" alt="">--}}
+{{--                            <h4 class="mg5">Amazone</h4>--}}
+{{--                            <button type="button" class="btn btn-primary btn-xs mg5">Tay Store</button>--}}
+{{--                            <p class="mg5">Your configuration goes here <i class="fa fa-arrow-right" aria-hidden="true"></i></p>--}}
+{{--                        </div>--}}
+
+{{--                    </div>--}}
+{{--                </a>--}}
+            </div>
+            <div class="col-xl-4">
+
             </div>
 
         </div>

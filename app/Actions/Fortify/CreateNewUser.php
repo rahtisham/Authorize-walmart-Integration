@@ -24,24 +24,45 @@ class CreateNewUser implements CreatesNewUsers
      */
     public function create(array $input)
     {
-        Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'last_name' => ['required', 'string', 'max:255'],
+        $validator = Validator::make($input, [
+            'fname' => ['required', 'alpha', 'max:255'],
+            'email' => 'required|email|max:255|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix|unique:users',
+            'lname' => ['required', 'alpha', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
-            'city' => ['required', 'string', 'max:255'],
-            'postal' => ['required', 'string', 'max:255'],
-            'country' => ['required', 'string', 'max:255'],
-            'state' => ['required', 'string', 'max:255'],
+            'city' => ['required', 'alpha', 'max:255'],
+            'postal' => ['required', 'max:7'],
+            'country' => ['required', 'alpha', 'max:255'],
+            'state' => ['required', 'alpha', 'max:255'],
             'contact' => ['required', 'string', 'max:255'],
-            'cardNumber' => ['required', 'string', 'max:255'],
+            'owner' => ['required', 'alpha', 'max:255'],
+            'cardNumber' => ['required', 'max:16'],
             'expiration-year' => ['required', 'string', 'max:255'],
             'expiration-month' => ['required', 'string', 'max:255'],
-            'cvv' => ['required', 'string', 'max:255'],
-            'amount' => ['required', 'string', 'max:255'],
-            'password' => $this->passwordRules(),
+            'cvv' => ['required', 'max:3', 'min:3'],
+            'amount' => ['required', 'max:255'],
+            'password' => 'required|string|min:6|confirmed|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
+            'password_confirmation' => 'required',
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
+        ],[
+            'email.required' => 'Email is required',
+            'fname.required' => 'First name is required',
+            'fname.alpha' => 'First name must only contain letters',
+            'lname.required' => 'First name is required',
+            'lname.alpha' => 'Last name must only contain letters',
+            'address.required' => 'Address is required',
+            'city.required' => 'City is required',
+            'state.required' => 'State is required',
+            'contact.required' => 'Phone number is required',
+            'postal.required' => 'Postal code is required',
+            'amount.required' => 'Amount is required',
+            'country.required' => 'Country is required',
+            'cvv.required' => 'CVV is required',
+            'cardNumber.required' => 'Card number is required',
+            'owner.required' => 'Card holder name is required',
+            'password.required' => 'Password is required',
+            'password_confirmation.required' => 'Confirm password is required',
         ])->validate();
+
 
         $input['cardNumber'];
         $input['expiration-year'];
@@ -50,9 +71,9 @@ class CreateNewUser implements CreatesNewUsers
         $input['amount'];
 
          $user = User::create([
-            'name' => $input['name'],
+            'name' => $input['fname'],
             'email' => $input['email'],
-            'last_name' => $input['last_name'],
+            'last_name' => $input['lname'],
             'address' => $input['address'],
             'city' => $input['city'],
             'postal' => $input['postal'],

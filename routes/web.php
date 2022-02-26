@@ -14,6 +14,7 @@ use App\Http\Controllers\Walmart\Alerts\CarrierPerformanceController;
 use App\Http\Controllers\Walmart\Alerts\RegionalPerformanceController;
 use App\Http\Controllers\Walmart\Alerts\OrdersContnroller;
 use App\Http\Controllers\Walmart\Alerts\ShippingPerformanceController;
+use App\Http\Controllers\Walmart\Alerts\OrderStatusCheckController;
 use App\Http\Controllers\Walmart\Alerts\ItemsController;
 use App\Http\Controllers\MarketPlace\MarketPlaceController;
 
@@ -29,15 +30,15 @@ use App\Http\Controllers\MarketPlace\MarketPlaceController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+//
+//Route::get('/', function () {
+//    return Inertia::render('Welcome', [
+//        'canLogin' => Route::has('login'),
+//        'canRegister' => Route::has('register'),
+//        'laravelVersion' => Application::VERSION,
+//        'phpVersion' => PHP_VERSION,
+//    ]);
+//});
 
 Route::get('registration-form', function () {
     return view('payment');
@@ -96,15 +97,15 @@ Route::group(['middleware' => 'auth'] , function(){
         Route::get('order', [OrdersContnroller::class, 'index'])->name('dashboard.order');
         Route::post('order-add', [OrdersContnroller::class, 'orderDetails'])->name('dashboard.order-add');
 
+        Route::get('order-status', [OrderStatusCheckController::class, 'index'])->name('dashboard.order-status');
+        Route::post('order-status-check', [OrderStatusCheckController::class, 'orderStatusCheck'])->name('dashboard.order-status-check');
 
 
         Route::get('items', [ItemsController::class, 'index'])->name('dashboard.items');
         Route::post('items-add', [ItemsController::class, 'walmartItems'])->name('dashboard.items-add');
 
 
-
         Route::get('client', [DashboardController::class, 'client'])->name('dashboard.client');
-
 
 
         Route::get('authorize', [AuthorizeNetController::class, 'index'])->name('dashboard.authorize');

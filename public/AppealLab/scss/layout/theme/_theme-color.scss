@@ -2,7 +2,7 @@
 @each $name, $color in $theme_backgrounds {
     [data-primary="#{$name}"] {
         @if $name != "color_1"  {
-		
+
 			a {
 				&:hover,
 				&:focus,
@@ -74,8 +74,8 @@
 				}
 			}
 			.wizard {
-				&>.steps li.current a { 
-					background-color: $color; 
+				&>.steps li.current a {
+					background-color: $color;
 				}
 				.skip-email a {
 					color: $color;
@@ -98,7 +98,7 @@
 							&.current a {
 								.number {
 									color: $color;
-									border-color: $color; 
+									border-color: $color;
 								}
 							}
 							&.disabled a {
@@ -112,12 +112,12 @@
 								}
 							}
 						}
-					}					
+					}
 				}
-			}        
+			}
 			.is-invalid .input-group-prepend .input-group-text i {
 				color: lighten($color, 15%);
-			}	
+			}
 			.datamaps-hoverover {
 				color: $color;
 				border: 1px solid rgba($color, .3);
@@ -146,10 +146,10 @@
 							}
 						}
 					}
-					
+
 				}
 			}
-			
+
 			table.dataTable tr.selected{
 				color: $color;
 			}
@@ -208,7 +208,7 @@
 			}
 			.pignose-calendar {
 				border-color: $color;
-				
+
 				.pignose-calendar-top-date {
 					background-color: $color;
 				}
@@ -283,7 +283,7 @@
 			.card-loader i {
 				background: darken($color,7%);
 			}
-			
+
 			.dropdown-outline{
 				border: .1rem solid $color;
 			}
@@ -331,7 +331,7 @@
 					&:after, &:before {
 						background-color: lighten($color: $color, $amount: 20%);
 					}
-				}	
+				}
 				&__five {
 					background-color: $color;
 
@@ -345,15 +345,15 @@
 			}
 			.multi-steps{
 				& > li {
-					color: $color;	
+					color: $color;
 					&:after {
 						background-color: $color;
 					}
 					&.is-active:before {
 							border-color: $color;
 					}
-				}			
-			}			
+				}
+			}
 			.timeline-badge.primary {
 				background-color: $color !important;
 			}
@@ -364,7 +364,7 @@
 					}
 				}
 			}
-			
+
 			.chart_widget_tab_one {
 				.nav-link {
 					&.active {
@@ -466,9 +466,9 @@
 						.metismenu {
 							&>li {
 								&>a {
-									&:hover, 
-									&:focus, 
-									&:active, 
+									&:hover,
+									&:focus,
+									&:active,
 									&.mm-active {
 										&>a {
 											background-color: lighten($color: $color, $amount: 50%);
@@ -493,7 +493,7 @@
 				&:hover {
 					color: $color;
 				}
-			}	
+			}
 			&[data-theme-version="dark"] {
 				.pagination .page-item{
 					.page-link:hover{
@@ -541,7 +541,7 @@
 			}
 			.timeline-badge {
                 background-color: $color;
-			}	
+			}
 			.page-timeline{
 				.timeline {
 					&-workplan#{&} {
@@ -554,7 +554,7 @@
 			.sk-three-bounce .sk-child {
 				background-color: $color;
 			}
-			.dropdown-item.active, 
+			.dropdown-item.active,
 			.dropdown-item:active{
 				color: #fff;
 				background-color:$color;
@@ -584,16 +584,16 @@
 				background-color: $color;
 				border-color: $color;
 			}
-			.btn-primary:not(:disabled):not(.disabled):active, 
-			.btn-primary:not(:disabled):not(.disabled).active, 
+			.btn-primary:not(:disabled):not(.disabled):active,
+			.btn-primary:not(:disabled):not(.disabled).active,
 			.show > .btn-primary.dropdown-toggle,
-			.btn-outline-primary:not(:disabled):not(.disabled):active, 
-			.btn-outline-primary:not(:disabled):not(.disabled).active, 
+			.btn-outline-primary:not(:disabled):not(.disabled):active,
+			.btn-outline-primary:not(:disabled):not(.disabled).active,
 			.show > .btn-outline-primary.dropdown-toggle{
 				background-color:darken($color, 15);
 				border-color: darken($color, 15);
 			}
-		// End Css	
+		// End Css
         }
     }
 }

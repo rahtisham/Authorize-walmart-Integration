@@ -9,7 +9,6 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
@@ -20,14 +19,19 @@
 
     </head>
     <style>
-        button, input, optgroup, select, textarea {
+
+        button, optgroup, select, textarea {
+            margin: 0;
+            height: 58px !important;
+        }
+        .form-control{
             margin: 0;
             height: 58px !important;
         }
 
-        .p{
-            color: rgb(110, 110, 110)!important;
-        }
+        /*.p{*/
+        /*    color: rgb(110, 110, 110)!important;*/
+        /*}*/
         .support-text {
             display: flex;
         }
@@ -37,54 +41,51 @@
             color: rgb(22, 22, 22);
         }
 
-        .fa {
-            color: rgb(102, 102, 102);
-        }
+        /*.fa {*/
+        /*    color: rgb(102, 102, 102);*/
+        /*}*/
 
-        .info-h1 {
-            font-size: 22px;
-            font-weight: 400;
-        }
+        /*.info-h1 {*/
+        /*    font-size: 22px;*/
+        /*    font-weight: 400;*/
+        /*}*/
 
-        .lname {
-            margin-left: 10px;
-        }
+        /*.selection-input {*/
+        /*    margin: 0px 10px;*/
+        /*}*/
 
-        .selection-input {
-            margin: 0px 10px;
-        }
+        /*#myDIV {*/
+        /*    display: none;*/
+        /*}*/
 
-        #myDIV {
-            display: none;
-        }
+        /*.coupon-text {*/
+        /*    color: rgb(2, 147, 204);*/
+        /*    font-size: 15px;*/
+        /*}*/
 
-        .coupon-text {
-            color: rgb(2, 147, 204);
-            font-size: 15px;
-        }
+        /*.coupon-submit {*/
+        /*    width: 200px;*/
+        /*    font-size: 14px;*/
+        /*    padding: 8px 10px;*/
+        /*    height: auto;*/
+        /*    background-color: #999;*/
+        /*    color: #fff !important;*/
+        /*    border: none;*/
+        /*    margin-left: 10px;*/
+        /*}*/
 
-        .coupon-submit {
-            width: 200px;
-            font-size: 14px;
-            padding: 8px 10px;
-            height: auto;
-            background-color: #999;
-            color: #fff !important;
-            border: none;
-            margin-left: 10px;
-        }
-
-        .payment-para {
-            font-size: 15px;
-        }
+        /*.payment-para {*/
+        /*    font-size: 15px;*/
+        /*}*/
         .btn-form-submit{
-            font-size: 25px;
+            font-size: 22px;
             padding: 19px 25px;
             width: 100%;
             font-weight: 700;
             color: #fff;
             border: none;
-            box-shadow: 1px 0px 15px rgb(143, 143, 143);
+            justify-content: center;
+            /*box-shadow: 1px 0px 15px rgb(143, 143, 143);*/
             background-color: #24AE4E;
         }
         .last-sec-heading{

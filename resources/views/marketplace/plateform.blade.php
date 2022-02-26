@@ -21,7 +21,8 @@
         </div>
         <!-- Connect with Integration Headinge -->
         <div class="row justify-content-center p-2">
-            <div class="col-xl-5">
+            <div class="col-xl-2"></div>
+            <div class="col-xl-6">
                 <a href="{{ url('dashboard/marketplace/walmart') }}">
                     <div class="card HoverCard bg-image-walmart">
                         <div class="card-header">
@@ -35,20 +36,20 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-5">
-                <a href="{{ url('dashboard/marketplace/amazone') }}">
-                    <div class="card HoverCard bg-image-amazone">
-                        <div class="card-header">
-                            <button type="button" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-check" aria-hidden="true"></i></button>
-                        </div>
-                        <div class="pdleft">
-                            <img class="mg5" src="{{ asset('AppealLab/images/amazon-logo.png') }}" width="60px" alt="">
-                            <h4 class="mg5">Connect Amazone</h4>
-                            <p class="mg5">Let's start setting up your system <i class="fa fa-arrow-right" aria-hidden="true"></i></p>
-                        </div>
+            <div class="col-xl-2">
+{{--                <a href="{{ url('dashboard/marketplace/amazone') }}">--}}
+{{--                    <div class="card HoverCard bg-image-amazone">--}}
+{{--                        <div class="card-header">--}}
+{{--                            <button type="button" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-check" aria-hidden="true"></i></button>--}}
+{{--                        </div>--}}
+{{--                        <div class="pdleft">--}}
+{{--                            <img class="mg5" src="{{ asset('AppealLab/images/amazon-logo.png') }}" width="60px" alt="">--}}
+{{--                            <h4 class="mg5">Connect Amazone</h4>--}}
+{{--                            <p class="mg5">Let's start setting up your system <i class="fa fa-arrow-right" aria-hidden="true"></i></p>--}}
+{{--                        </div>--}}
 
-                    </div>
-                </a>
+{{--                    </div>--}}
+{{--                </a>--}}
             </div>
 
         </div>

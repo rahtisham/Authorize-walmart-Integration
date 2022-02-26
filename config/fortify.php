@@ -18,6 +18,10 @@ return [
 
     'guard' => 'web',
 
+    'redirects' => [
+        'logout' => 'login',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Fortify Password Broker

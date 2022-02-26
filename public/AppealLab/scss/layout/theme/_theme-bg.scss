@@ -16,22 +16,22 @@
 				.hamburger .line{
 					background:#fff;
 				}
-				
+
             }
 			&[data-sidebar-style="full"][data-layout="vertical"]{
 				.menu-toggle .nav-header .nav-control .hamburger .line{
 					background:#fff ;
 				}
 			}
-			
+
         }
-		
+
 	}
 }
 
 
 
-//background for header 
+//background for header
 @each $name, $color in $theme_backgrounds {
     [data-headerbg="#{$name}"][data-theme-version="dark"],
     [data-headerbg="#{$name}"] {
@@ -67,8 +67,8 @@
                     background-color: darken($color: $color, $amount: 10%);
                     border-color: darken($color: $color, $amount: 10%);
 
-                    &:hover, 
-                    &:focus, 
+                    &:hover,
+                    &:focus,
                     &:active {
                         background-color: darken($color: $color, $amount: 20%);
                         border-color: darken($color: $color, $amount: 20%);
@@ -110,7 +110,7 @@
                 background-color: lighten($color: $color, $amount: 10%);
                 color: $white;
             }
-			
+
         }
     }
 }
@@ -121,7 +121,7 @@
     [data-sibebarbg="#{$name}"][data-theme-version="dark"],
     [data-sibebarbg="#{$name}"] {
         @if $name != "color_1" {
-			
+
 			.deznav {
                 background-color: $color;
 				.menu-tabs li a.active{
@@ -137,24 +137,24 @@
                             color:  rgba(255,255,255,0.7); //darken($color: $white, $amount: 0%);
 							svg{
 								color:rgba(255,255,255,0.7);
-							}		
+							}
 							g [fill] {
 								fill: rgba(255,255,255,0.7);
-							}		
+							}
                         }
 
-                        &:hover, 
-                        &:focus, 
+                        &:hover,
+                        &:focus,
                         &.mm-active {
-            
+
                             &>a {
                                 color: $white;
 								g [fill] {
 									fill:$white;
-								}	
+								}
 								svg{
 									color:$white;
-								}	
+								}
                                 // &::after {
                                 //     border-color: transparent transparent $white transparent;
                                 // }
@@ -170,8 +170,8 @@
                     a {
                         color: rgba(255,255,255,0.7);
 
-                        &:hover, 
-                        &:focus, 
+                        &:hover,
+                        &:focus,
                         &.mm-active {
                             color: $white;
                         }
@@ -210,14 +210,14 @@
 			&[data-sidebar-style="icon-hover"][data-layout="vertical"]{
 				.deznav .metismenu ul{
 					border-color: rgba(255,255,255,0.2);
-				}	
+				}
 			}
 			&[data-layout="horizontal"]{
 				.deznav .metismenu > li{
 					border-color: rgba(255,255,255,0.2);
 				}
 			}
-        } 
+        }
     }
 }
 

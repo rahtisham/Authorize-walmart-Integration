@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class WalmartIntegration extends Migration
+class WalmartItemsManager extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class WalmartIntegration extends Migration
      */
     public function up()
     {
-        Schema::table('walmart_integration', function (Blueprint $table) {
+        Schema::table('WalmartItemsManager', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id')->nullable();
-            $table->string('name')->nullable();
-            $table->string('platform')->nullable();
-            $table->string('client_id')->unique();
-            $table->string('client_secret')->unique();
-            $table->string('is_active')->nullable();
-            $table->string('token')->nullable();
+            $table->string('m_id')->nullable();
             $table->string('status')->nullable();
+            $table->string('module')->nullable();
             $table->timestamps();
         });
     }
