@@ -7,10 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="container">
         <div class="row">
-
             <div class="col-md-7 py-3">
 
-                <img src=".\images\cropped-logo-png.png" alt="" width="242px">
+                <img src="{{ asset('AppealLab/images/logoa.png') }}" alt="" width="242px">
 
                 <div class="support-text py-4">
                     <p class="px-0">Need support?</p>
@@ -409,7 +408,7 @@
                                 </div>
                                 <div class="col-md-6 py-3">
 {{--                                    <label class="card-labels" for="card-exp">Amount</label>--}}
-                                    <input type="number" id="amount" name="amount" placeholder="Amount" class="form-control fname card-exp name-form" min="1" value="{{ old('amount') }}" >
+                                    <input type="number" id="amount" name="amount" placeholder="Amount" class="form-control fname card-exp name-form" min="1" value="{{ $amount }}"  readonly>
                                     @error('amount')
                                     <span class="text-danger"> {{ $message }}</span>
                                     @enderror
@@ -477,7 +476,38 @@
 
             <div class="col-md-5 bgColor">
 
+                <div class="row">
+                    <div class="col-md-9 pull-left" style="display: flex;">
+                        <img src="{{ asset('AppealLab/images/checkout.jpg') }}">
+                        <p class="txtColor">Account Protection - Walmart WFS <br><span class="txtColor">${{ $amount }}/month</span></p>
+                    </div>
+                    <div class="col-md-3 pull-right justify-content-center">
+                        <p class="txtColor">${{ $amount }}</p>
+                    </div>
+                </div> <!--end of row-->
+
+                <hr>
+
+                <a href="$">Have a coupon? Click here to enter your code</a>
+
+                <hr>
+
+                <div class="bg-light clearfix">
+                    <div class="pull-left txtColor"><h5>Subtotal</h5></div>
+                    <div class="pull-right txtColor"><h5>${{ $amount }}</h5></div>
+                </div>
+
+                <hr>
+
+                <div class="bg-light clearfix">
+                    <div class="pull-left txtColor"><h5>Total</h5></div>
+                    <div class="pull-right txtColor"><h5>${{ $amount }}</h5></div>
+                </div>
+
+                <hr>
+
                 <div class="mainCent">
+
                 <h5 class="txtColor">WHY BUY FROM US</h5>
 
                 <h6 class="mg txt txtColor"><i class="fa fa-check" style="color: cornflowerblue; margin-top: 10px;"></i> 100% Safe and Secure</h6><br>

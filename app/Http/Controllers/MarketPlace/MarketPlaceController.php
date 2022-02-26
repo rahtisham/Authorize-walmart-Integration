@@ -10,6 +10,37 @@ use Illuminate\Support\Facades\Validator;
 
 class MarketPlaceController extends Controller
 {
+    public function home()
+    {
+        if(auth()->user()){
+            return redirect('dashboard/marketplace');
+        }else{
+            return redirect('/login');
+        }
+
+    }
+
+    public function checkout($subscription)
+    {
+        $amount = '';
+
+        if($subscription == 'option1'){
+            $amount = 147;
+        }
+        if($subscription == 'option2'){
+            $amount = 197;
+        }
+        if($subscription == 'option3'){
+            $amount = 50;
+        }
+        if($subscription == 'option4'){
+            $amount = 79;
+        }
+
+        return view('auth.register' , ['amount' => $amount]);
+
+    }
+
     public function index()
     {
         $user_session_id = auth()->user()->id;

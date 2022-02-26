@@ -39,11 +39,14 @@ use App\Http\Controllers\MarketPlace\MarketPlaceController;
 //        'phpVersion' => PHP_VERSION,
 //    ]);
 //});
+Route::get('/', [MarketPlaceController::class, 'home'])->name('home');
+
 
 Route::get('registration-form', function () {
     return view('payment');
 });
 
+Route::get('/checkout/{subscribtion}', [MarketPlaceController::class, 'checkout'])->name('checkout');
 
 Route::group(['middleware' => 'auth'] , function(){
 
@@ -119,7 +122,7 @@ Route::group(['middleware' => 'auth'] , function(){
 });
 
 
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+//
+//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//    return Inertia::render('Dashboard');
+//})->name('dashboard');

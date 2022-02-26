@@ -26,7 +26,7 @@
                             <div class="pdleft">
                                 <img class="mg5" src="{{ asset('AppealLab/images/walmart-logo.png') }}" width="60px" alt="">
                                 <h4 class="mg5">{{ $walmart['platform'] }}</h4>
-                                <button type="button" class="btn btn-primary btn-xs mg5">{{ $walmart['name'] }}</button>
+                                <button type="button" style="background: #3EC2C2;" class="btn btn-info btn-xs mg5">{{ $walmart['name'] }}</button>
                                 <p class="mg5">Your configuration goes here <i class="fa fa-arrow-right" aria-hidden="true"></i></p>
                             </div>
                         </div>
